@@ -26,6 +26,8 @@ def find_distance(start, end, path = []):
     
     path += [start]
     
+    if start == end:
+        return (len(path) - 1) 
     if end in data['Following']:            
         return (len(path)) 
     for node in data['Following']:
@@ -33,4 +35,4 @@ def find_distance(start, end, path = []):
             return find_distance(node, end)
     
 
-print(find_distance('userA', 'userM'))
+print(find_distance('userA', 'userA'))
